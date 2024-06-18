@@ -1,0 +1,71 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \uc0\u1051 \u1072 \u1073  1\
+\uc0\u1047 \u1072 \u1076 \u1072 \u1095 \u1072  1 \u1089 ++
+\f1\b0 \
+\
+#include <iostream>\
+#include <complex>\
+using namespace std;\
+\
+int main() \{\
+    complex<double> z1(2, 1);  \
+    complex<double> z2(3, 1);  \
+    complex<double> z3(1, 2);  \
+\
+    // \uc0\u1042 \u1099 \u1095 \u1080 \u1089 \u1083 \u1077 \u1085 \u1080 \u1077  \u1089 \u1091 \u1084 \u1084 \u1099 , \u1088 \u1072 \u1079 \u1085 \u1086 \u1089 \u1090 \u1080 , \u1087 \u1088 \u1086 \u1080 \u1079 \u1074 \u1077 \u1076 \u1077 \u1085 \u1080 \u1103  \u1080  \u1095 \u1072 \u1089 \u1090 \u1085 \u1086 \u1075 \u1086 \
+    complex<double> sum = z1 + z2;\
+    complex<double> diff = z1 - z2;\
+    complex<double> prod = z1 * z2;\
+    complex<double> quot = z1 / z2;\
+\
+    cout << "\uc0\u1057 \u1091 \u1084 \u1084 \u1072 : " << sum << endl;\
+    cout << "\uc0\u1056 \u1072 \u1079 \u1085 \u1086 \u1089 \u1090 \u1100 : " << diff << endl;\
+    cout << "\uc0\u1055 \u1088 \u1086 \u1080 \u1079 \u1074 \u1077 \u1076 \u1077 \u1085 \u1080 \u1077 : " << prod << endl;\
+    cout << "\uc0\u1063 \u1072 \u1089 \u1090 \u1085 \u1086 \u1077 : " << quot << endl;\
+\
+    // \uc0\u1042 \u1099 \u1095 \u1080 \u1089 \u1083 \u1077 \u1085 \u1080 \u1077  \u1095 \u1077 \u1090 \u1074 \u1077 \u1088 \u1090 \u1086 \u1081  \u1089 \u1090 \u1077 \u1087 \u1077 \u1085 \u1080  \u1080  \u1082 \u1086 \u1088 \u1085 \u1103  \u1090 \u1088 \u1077 \u1090 \u1100 \u1077 \u1081  \u1089 \u1090 \u1077 \u1087 \u1077 \u1085 \u1080  kom\u1087 \u1083 \u1077 \u1082 \u1089 \u1085 \u1086 \u1075 \u1086  \u1095 \u1080 \u1089 \u1083 \u1072  Z3\
+    complex<double> power4 = pow(z3, 4);\
+    complex<double> root3 = pow(z3, 1.0/3);\
+\
+    cout << "\uc0\u1063 \u1077 \u1090 \u1074 \u1077 \u1088 \u1090 \u1072 \u1103  \u1089 \u1090 \u1077 \u1087 \u1077 \u1085 \u1100  Z3: " << power4 << endl;\
+    cout << "\uc0\u1050 \u1086 \u1088 \u1077 \u1085 \u1100  \u1090 \u1088 \u1077 \u1090 \u1100 \u1077 \u1081  \u1089 \u1090 \u1077 \u1087 \u1077 \u1085 \u1080  Z3: " << root3 << endl;\
+\
+    return 0;\
+\}\
+\
+
+\f0\b \uc0\u1047 \u1072 \u1076 \u1072 \u1095 \u1072  2 \u1087 \u1080 \u1090 \u1086 \u1085 
+\f1\b0 \
+\
+import math\
+\
+def func(x):\
+    return math.log(x) + (x + 1)**3\
+\
+#\uc0\u1080 \u1089 \u1087 \u1086 \u1083 \u1100 \u1079 \u1086 \u1074 \u1072 \u1085 \u1080 \u1077  \u1084 \u1077 \u1090 \u1086 \u1076 \u1072  \u1076 \u1080 \u1093 \u1086 \u1090 \u1086 \u1084 \u1080 \u1080 \
+def bisection_method(a, b, e):\
+    while (b - a) >= e:\
+        c = (a + b) / 2\
+\
+        if func(c) == 0:\
+            break\
+        elif func(c) * func(a) < 0:\
+            b = c\
+        else:\
+            a = c\
+\
+    return c\
+\
+a = 0.01\
+b = 1.0\
+e = 1e-6\
+\
+root = bisection_method(a, b, e)\
+\
+print("\uc0\u1050 \u1086 \u1088 \u1077 \u1085 \u1100  \u1091 \u1088 \u1072 \u1074 \u1085 \u1077 \u1085 \u1080 \u1103 :", root)}
